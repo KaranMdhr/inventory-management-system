@@ -1,0 +1,16 @@
+
+  <link rel="stylesheet" th:href="@{/css/parameterization/itemform.css}">
+
+<div th:replace="header :: header"></div>
+<div class="table-container">
+    <div class="header-row">
+        <h1>Item List</h1>
+        <a class="add-btn" href="/additemform">+ Add New Item</a>
+    </div>
+    <section th:replace="layout/table"></section>
+    <nav>
+        <ul class="pagination justify-content-center" id="pagination"></ul>
+    </nav>
+</div>
+
+<script src="/js/parameterization/item/itemform.js"></script>

@@ -1,0 +1,16 @@
+<div th:replace="header :: header"></div>
+<link rel="stylesheet" href="/css/utility/calender.css">
+<div class="calendar-container">
+    <div class="calendar-header">
+        <div class="month-year" id="monthYear"></div>
+        <div class="calendar-controls">
+            <button class="toggle-btn" id="prevMonth">&lt;</button>
+            <select id="monthSelect" class="calendar-select"></select>
+            <select id="yearSelect" class="calendar-select"></select>
+            <button class="toggle-btn" id="nextMonth">&gt;</button>
+        </div>
+    </div>
+    <div class="calendar-grid" id="calendarGrid">
+    </div>
+</div>
+<script src="/js/utility/calender.js"></script>

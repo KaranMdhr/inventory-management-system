@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    background-image: url('/image/landingPage.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 0 20px;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+.navbar-brand {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #fff;
+}
+.nav-menu {
+    list-style: none;
+    display: flex;
+}
+.nav-item {
+    position: relative;
+}
+.nav-link {
+    display: block;
+    padding: 20px 15px;
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+}
+.nav-link:hover {
+    background-color: #444;
+}
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    list-style: none;
+    min-width: 250px;
+    border: 1px solid #444;
+    z-index: 1000;
+}
+.dropdown-item {
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    color: #fff;
+}
+.dropdown-item:hover {
+    background-color: #444;
+}
+.nav-item:hover > .dropdown-menu,
+.dropdown-submenu:hover > .dropdown-menu {
+    display: block;
+}
+.dropdown-submenu {
+    position: relative;
+}
+.dropdown-submenu > .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-left: 1px;
+    z-index: 1100;
+}
+.container {
+    width: 100%;
+    height: calc(100% - 60px); /* 60px is the navbar height */
+    margin: 0;
+    background: transparent;
+    padding: 20px;
+    border-radius: 0;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+h1 {
+    margin-bottom: 20px;
+}
+
+.login-section {
+    width: 40%;
+    margin-top: 40px;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    background-color: rgba(249, 249, 249, 0.5); /* more transparent */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.login-section h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.login-section label {
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.login-section input[type="tel"],
+.login-section input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.login-section button {
+    padding: 10px 25px;
+    font-size: 16px;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-section button:hover {
+    background-color: #0055a5;
+}

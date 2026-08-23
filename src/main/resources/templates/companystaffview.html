@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Employee</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/utility/companystaff.css}">
+</head>
+<body>
+
+<div class="form-container">
+    <form>
+        <h2>View Employee</h2>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" value="Hari" readonly>
+            </div>
+            <div class="form-group">
+                <label for="middleName">Middle Name</label>
+                <input type="text" id="middleName" name="middleName" value="Bahadur" readonly>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" value="Singh" readonly>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="employeeType">Employee Type</label>
+                <input type="text" id="employeeType" name="employeeType" value="Permanent" readonly>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender</label>
+               <input type="text" id="gender" name="gender" value="Male" readonly>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="e.g. info@company.com"
+                       pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Enter a valid email address" value="rambahadur@company.com" readonly>
+            </div>
+            <div class="form-group">
+                <label for="phoneNumber">Phone Number</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" pattern="^\d{6,15}(,\s*\d{6,15})*$"
+                       placeholder="e.g. 9860112233" title="Enter valid phone number" value="9860112233" readonly>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="branch">Branch</label>
+               <input type="text" id="branch" name="branch" value="Main Branch" readonly>
+            </div>
+            <div class="form-group">
+                <label for="department">Department</label>
+               <input type="text" id="department" name="department" value="HR" readonly>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Profile Picture:</label>
+            <img src="https://picsum.photos/200" class="staffimg" alt="photo">
+        </div>
+
+
+    </form>
+</div>
+
+</body>
+</html>

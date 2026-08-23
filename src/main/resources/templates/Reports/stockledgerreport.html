@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Stock Ledger</title>
+    <link rel="stylesheet" th:href="@{/css/reports/stockledgerreport.css}">
+</head>
+<body>
+<div th:replace="header :: header"></div>
+<div class="custom-form-container">
+<h1>Stock Ledger</h1>
+<div class="custom-form-row">
+    <div class="form-group">
+        <label for="productSelect">Category</label>
+        <select id="productSelect">
+            <option value="">All Category</option>
+        </select>
+    </div>
+    <div class="form-actions">
+        <input type="text" placeholder="Search..." id="generalSearch"/>
+        <button class="custom-btn-search">SEARCH</button>
+        <button class="custom-btn-reset">RESET</button>
+    </div>
+</div>
+<section th:replace="layout/table"></section>
+</div>
+
+<script src="/js/reports/stockledgerreport.js"></script>
+</body>
+</html>

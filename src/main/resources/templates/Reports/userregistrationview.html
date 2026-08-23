@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Registration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/utility/companystaff.css}">
+</head>
+<body>
+<div th:replace="header :: header"></div>
+<div class="form-container">
+    <h2>User Registration</h2>
+    <form action="/register-user" method="post" enctype="multipart/form-data">
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" value="Hari" readonly>
+            </div>
+            <div class="form-group">
+                <label for="middleName">Middle Name</label>
+                <input type="text" id="middleName" name="middleName" value="Saran" readonly>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" value="Manandhar" readonly>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="e.g. info@company.com" required
+                       pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Enter a valid email address" value="johndoe@gmail.com" readonly>
+            </div>
+            <div class="form-group">
+                <label for="phoneNumber">Phone Number</label>
+                <input type="Text" id="phoneNumber" name="phoneNumber" pattern="^\d{6,15}(,\s*\d{6,15})*$"
+                       placeholder="e.g. 9860112233" title="Enter valid phone number" required value="9849987456" readonly>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="branch">Branch</label>
+                <input type="text" id="branch" name="branch" value="Nagarjun" readonly>
+
+            </div>
+            <div class="form-group">
+                <label for="department">Department</label>
+                <input type="text" id="department" name="department" value="Human Resource" readonly>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="role">User Role:</label>
+            <input type="text" id="role" name="role" value="Admin" readonly>
+        </div>
+
+        <div class="form-group">
+            <label>Permissions:</label>
+            <div style="display: flex; flex-wrap: wrap; gap: 15px;">
+                <label><input type="checkbox" name="permissions" value="view" checked disabled>All</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="image">Profile Picture:</label>
+            <img src="https://picsum.photos/200" class="staffimg"  alt="Random Profile Picture" id="image" style="width: 200px; height: 200px;">
+        </div>
+
+    </form>
+</div>
+
+</body>
+</html>

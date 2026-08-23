@@ -1,0 +1,42 @@
+
+    <link rel="stylesheet" href="/css/utility/accesscontrol.css">
+
+<div th:replace="header :: header"></div>
+<div class="container">
+    <h2>Access Control</h2>
+    <div class="filter-section">
+        <div>
+            <label for="smartFilter">Filter:</label>
+            <div class="custom-dropdown" id="smartFilter">
+                <div class="dropdown-selected" tabindex="0" id="selectedValue">Select...</div>
+                <div class="dropdown-list" id="dropdownList">
+                    <div class="dropdown-option" data-group="role" data-value="">Role</div>
+                    <div class="dropdown-option" data-group="permission" data-value="">Permission</div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <label for="statusFilter">Status:</label>
+            <select id="statusFilter" onchange="filterData()">
+                <option value="">All Status</option>
+                <option value="active">Active</option>
+                <option value="suspended">Suspended</option>
+            </select>
+        </div>
+        <div>
+            <label for="searchUser">Search User:</label>
+            <input type="text" id="searchUser" placeholder="Enter username or email" oninput="filterData()" />
+        </div>
+        <div>
+            <button onclick="resetFilter()" class="btn">Reset Filters</button>
+        </div>
+    </div>
+
+    <section th:replace="layout/table"></section>
+
+    <a href="/roleform" class="btn rolebutton">
+        Add Role
+    </a>
+</div>
+
+<script src="/js/utility/accesscontrol.js"></script>

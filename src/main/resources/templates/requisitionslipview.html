@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>View Requisition Slip</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/css/operations/requisitionslip.css}">
+</head>
+<body>
+<div class="container">
+    <h2>View Requisition Slip</h2>
+
+    <div class="form-grid">
+        <div class="form-group">
+            <label>Requisition code: </label>
+            <div class="form-row">
+            <input type="text" class="code" placeholder="Auto-generated" readonly value="101" />
+            <input type="text" class="code" placeholder="Auto-generated" readonly value="102" />
+            <input type="text" class="code" placeholder="Auto-generated" readonly value="103" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Date</label>
+            <input type="text" value="2025-06-09" readonly />
+        </div>
+        <div class="form-group">
+            <label>Requested By</label>
+            <input type="text" value="John Doe" readonly />
+        </div>
+        <div class="form-group">
+            <label>Department</label>
+           <input type="text" value="HR" readonly>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table id="items-table">
+            <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Item Name</th>
+                <th>Qty</th>
+                <th>Unit</th>
+                <th>Remarks</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td><input type="text" placeholder="Name" value="Pen" readonly/></td>
+                <td><input type="number" placeholder="Qty" value="50" readonly/></td>
+                <td><input type="number" placeholder="Unit" value="20" readonly/></td>
+                <td><input type="text" placeholder="Remarks" value="Required urgent" readonly/></td>
+
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><input type="text" placeholder="Name" value="Pencil" readonly/></td>
+                <td><input type="number" placeholder="Qty" value="20" readonly/></td>
+                <td><input type="number" placeholder="Unit" value="10" readonly/></td>
+                <td><input type="text" placeholder="Remarks"  readonly/></td>
+
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><input type="text" placeholder="Name" value="Notebook" readonly/></td>
+                <td><input type="number" placeholder="Qty" value="50" readonly/></td>
+                <td><input type="number" placeholder="Unit" value="100" readonly/></td>
+                <td><input type="text" placeholder="Remarks" value="" readonly/></td>
+
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><input type="text" placeholder="Name" value="A4" readonly/></td>
+                <td><input type="number" placeholder="Qty" value="20" readonly/></td>
+                <td><input type="number" placeholder="Unit" value="500" readonly/></td>
+                <td><input type="text" placeholder="Remarks" value="It is soon going to be out of stock" readonly/></td>
+
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+
+</div>
+
+</body>
+</html>

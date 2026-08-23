@@ -1,0 +1,149 @@
+<link rel="stylesheet" th:href="@{/css/parameterization/company.css}">
+
+
+<div th:replace="header :: header"></div>
+<div th:replace="layout/form :: form"></div>
+
+
+<script src="/js/parameterization/company/company.js"></script>
+
+<!--<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const categoryInput = document.getElementById('categoryInput');
+    const categoryList = document.getElementById('categoryList');
+    let selectedCategories = [];
+
+    if (!categoryInput || !categoryList) return;
+
+    // Add Enter key handler
+    categoryInput.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter' && categoryInput.value.trim()) {
+            event.preventDefault();
+            const value = categoryInput.value.trim();
+            // Avoid duplicates
+            if (selectedCategories.includes(value)) {
+                categoryInput.value = "";
+                return;
+            }
+            selectedCategories.push(value);
+            renderCategoryTags();
+            categoryInput.value = "";
+        }
+    });
+
+    // Render tags (li elements)
+    function renderCategoryTags() {
+        categoryList.innerHTML = "";
+        selectedCategories.forEach(cat => {
+            const li = document.createElement('li');
+            li.textContent = cat;
+            // Add 'remove' button
+            const removeBtn = document.createElement('span');
+            removeBtn.textContent = " ✕";
+            removeBtn.style = "color:red; cursor:pointer; margin-left:5px;";
+            removeBtn.onclick = function() {
+                selectedCategories = selectedCategories.filter(c => c !== cat);
+                renderCategoryTags();
+            };
+            li.appendChild(removeBtn);
+            categoryList.appendChild(li);
+        });
+    }
+});
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // ==== DUMMY DATA ====
+        const dummyCategories = [
+            "Electronics", "Stationery", "Food", "Clothing", "Hardware", "Software",
+            "Electronics", "Stationery", "Food", "Clothing", "Hardware", "Software"
+        ];
+
+        const dummyItems = [
+            "Pen", "Pencil", "Notebook", "Mouse", "Keyboard", "Stapler"
+        ];
+
+
+        function setupTagInput({
+                                   inputId,
+                                   datalistId,
+                                   listId,
+                                   hiddenInputId,
+                                   suggestions
+                               }) {
+            const input = document.getElementById(inputId);
+            const datalist = document.getElementById(datalistId);
+            const list = document.getElementById(listId);
+            const hiddenInput = document.getElementById(hiddenInputId);
+
+            let selectedTags = [];
+
+            suggestions.forEach(item => {
+                const option = document.createElement('option');
+                option.value = item;
+                datalist.appendChild(option);
+            });
+
+            function updateHiddenInput() {
+                hiddenInput.value = selectedTags.join(',');
+            }
+
+            function renderTags() {
+                list.innerHTML = '';
+                selectedTags.forEach(tag => {
+                    const li = document.createElement('li');
+                    li.textContent = tag;
+
+                    const removeBtn = document.createElement('span');
+                    removeBtn.textContent = "✕";
+                    removeBtn.style = "margin-left:8px;cursor:pointer;color:red;";
+                    removeBtn.onclick = () => {
+                        selectedTags = selectedTags.filter(t => t !== tag);
+                        renderTags();
+                    };
+
+                    li.appendChild(removeBtn);
+                    list.appendChild(li);
+                });
+
+                updateHiddenInput();
+            }
+
+            function addTag(value) {
+                value = value.trim();
+                if (value && !selectedTags.includes(value)) {
+                    selectedTags.push(value);
+                    renderTags();
+                }
+                input.value = '';
+            }
+
+            input.addEventListener('keydown', function (event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+                    addTag(input.value);
+                }
+            });
+
+            input.addEventListener('change', function () {
+                addTag(input.value);
+            });
+        }
+
+        setupTagInput({
+            inputId: 'categoryInput',
+            datalistId: 'categoryDatalist',
+            listId: 'categoryList',
+            hiddenInputId: 'category',
+            suggestions: dummyCategories
+        });
+
+        setupTagInput({
+            inputId: 'itemInput',
+            datalistId: 'itemDatalist',
+            listId: 'itemList',
+            hiddenInputId: 'item',
+            suggestions: dummyItems
+        });
+    });
+</script>-->

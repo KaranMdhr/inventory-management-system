@@ -1,0 +1,30 @@
+<link rel="stylesheet" th:href="@{/css/view/itemissuereportview.css}">
+
+<div th:replace="header :: header"></div>
+<div class="form-container">
+    <h2>Item Issue Form</h2>
+    <label>Requisition Code:</label>
+    <input type="text" value="101" readonly><br>
+    <table>
+        <tr>
+            <td>Item</td>
+            <td>Unit</td>
+            <td>Quantity</td>
+        </tr>
+        <tr>
+            <td>Keyboard</td>
+            <td>Piece</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>Mouse</td>
+            <td>Piece</td>
+            <td>3</td>
+        </tr>
+    </table>
+    <label>Issue Date:</label>
+    <input type="text" value="2025-06-30" readonly><br>
+    <label>Issued To:</label>
+    <input type="text" value="John Doe" readonly><br>
+    <button>Print Gatepass</button>
+</div>

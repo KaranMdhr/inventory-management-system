@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Maintenance & Support Assignment Form</title>
+    <link rel="stylesheet" href="/css/view/maintainancereportview.css" />
+</head>
+<body>
+<div class="form-container">
+    <h2>Maintenance & Support Assignment Form</h2>
+    <form id="assignmentForm" onsubmit="return false;">
+
+        <label for="companyName">Company Name</label>
+        <input type="text" id="companyName" name="companyName" value="Mandala Systems" readonly/>
+
+        <label for="type">Type</label>
+        <select id="type" name="type" disabled>
+            <option value="" selected>maintainer</option>
+        </select>
+
+        <h3>Primary Contact</h3>
+        <label for="contactName">Name</label>
+        <input type="text" id="contactName" name="contactName" value="Ram kumar" readonly/>
+
+        <label for="contactEmail">Email</label>
+        <input type="email" id="contactEmail" name="contactEmail" value="ramkumar@gmail.com" readonly/>
+
+        <label for="contactPhone">Phone</label>
+        <input type="number" id="contactPhone" name="contactPhone" value="9800000001" readonly/>
+
+        <label for="keyUrl">Key URL</label>
+        <input type="url" id="keyUrl" name="keyUrl" value="https://github.com/ramkumar127/inventory-management-system" readonly />
+
+        <label for="productName">Product Name</label>
+        <input type="text" id="productName" name="productName" value="laptop" readonly/>
+
+        <label for="scope">Responsibilities / Scope of Work</label>
+        <textarea id="scope" name="scope" readonly>you have you remove ssd and keep  ram in ssd slot</textarea>
+
+        <label for="effectiveDate">Date</label>
+        <input type="text" id="effectiveDate" name="effectiveDate" value="2021-03-01" readonly/>
+
+        <label for="duration">Assignment Duration</label>
+        <div class="inline-inputs">
+            <div>
+                <input type="number" id="duration" name="durationNumber" value="6" readonly/>
+            </div>
+            <div>
+                <select id="durationUnit" name="durationUnit" disabled>
+                    <option value="days" selected>days</option>
+                </select>
+            </div>
+        </div>
+
+        <label for="notes">Additional Notes or Comments</label>
+        <textarea id="notes" name="notes" readonly>please dont forget to keep all the screws in</textarea>
+
+        <label>Document Photo</label>
+        <img src="https://picsum.photos/200" class="staffimg" alt="Photo of staff" />
+
+    </form>
+</div>
+</body>
+</html>

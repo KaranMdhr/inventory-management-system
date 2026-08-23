@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" th:href="@{/css/utility/calculator.css}">
+</head>
+<body>
+<div th:replace="header :: header"></div>
+<div class="calculator">
+    <input type="text" id="display" readonly>
+    <div class="buttons">
+        <!-- Top Row -->
+        <button class="clearcalc" onclick="clearAll()">AC</button>
+        <button class="clearcalc" onclick="clearEntry()">CE</button>
+        <button class="calc" onclick="toggleSign()">+/-</button>
+        <button class="calc" onclick="squareRoot()">√</button>
+
+        <!-- Memory -->
+        <button class="memorycalc" onclick="memory('MC')">MC</button>
+        <button class="memorycalc" onclick="memory('MR')">MR</button>
+        <button class="memorycalc" onclick="memory('M+')">M+</button>
+        <button class="memorycalc" onclick="memory('M-')">M-</button>
+
+        <!-- Numbers and Operations -->
+        <button onclick="append('7')">7</button>
+        <button onclick="append('8')">8</button>
+        <button onclick="append('9')">9</button>
+        <button class="calc" onclick="append('/')">÷</button>
+
+        <button onclick="append('4')">4</button>
+        <button onclick="append('5')">5</button>
+        <button onclick="append('6')">6</button>
+        <button class="calc" onclick="append('*')">×</button>
+
+        <button onclick="append('1')">1</button>
+        <button onclick="append('2')">2</button>
+        <button onclick="append('3')">3</button>
+        <button class="calc" onclick="append('-')">−</button>
+
+        <button onclick="append('0')">0</button>
+        <button onclick="append('00')">00</button>
+        <button onclick="append('000')">000</button>
+        <button class="calc" onclick="append('+')">+</button>
+        <button class="calc" onclick="append('.')">.</button>
+
+
+        <!-- Bottom Row -->
+        <button class="calc" onclick="percentage()">%</button>
+        <button class="calc" onclick="calculate()">=</button>
+    </div>
+</div>
+<script src="/js/utility/calculator.js"></script>
+</body>
+</html>

@@ -1,0 +1,280 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: var(--creamwhite);
+    /* pure white for clean UI */
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+th,
+td {
+    border-bottom: 1px solid #eee;
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 14px;
+    color: #333;
+}
+
+th {
+    background-color: #f8f9fa;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: #555;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+tr:hover td {
+    background-color: #f6f8fb;
+}
+
+button {
+    padding: 6px 12px;
+    border: none;
+    cursor: pointer;
+    margin-right: 5px;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+button[type="button"],
+.btn {
+    background-color: var(--defaultblue);
+    /* Soft blue */
+    color: var(--creamwhite);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="button"]:hover,
+.btn:hover {
+    background-color: #0056b3;
+}
+
+button.edit {
+    background-color: #CF9D24;
+    color: var(--creamwhite);
+}
+
+button.edit:hover {
+    background-color: #e0a800;
+}
+
+button.delete {
+    background-color: var(--darkred);
+    color: var(--creamwhite);
+}
+
+button.delete:hover {
+    background-color: #c82333;
+}
+
+.view-btn {
+    background-color: var(--defaultblue) !important;
+    color: var(--creamwhite) !important;
+}
+
+.view-btn:hover {
+    background-color: #117a8b !important;
+}
+
+.approve {
+    background-color: var(--greenygreen);
+    color: var(--creamwhite);
+}
+
+.approve:hover {
+    background-color: #218838;
+}
+
+.reject {
+    background-color: var(--darkred);
+    color: var(--creamwhite);
+}
+
+.reject:hover {
+    background-color: #c82333;
+}
+
+.permissions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    font-size: 12px;
+}
+
+.permissions-grid label {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.custom-dropdown {
+    position: relative;
+    display: inline-block;
+    min-width: 150px;
+}
+
+.dropdown-selected {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: var(--creamwhite);
+    cursor: pointer;
+    user-select: none;
+}
+
+.dropdown-selected:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+.dropdown-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--creamwhite);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: none;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.custom-dropdown.open .dropdown-list {
+    display: block;
+}
+
+.dropdown-option {
+    padding: 10px 14px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.dropdown-option:hover {
+    background-color: #f1f3f5;
+}
+
+.dropdown-option:last-child {
+    border-bottom: none;
+}
+
+.dropdown-back {
+    padding: 10px 14px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    color: #007bff;
+    font-weight: 500;
+}
+
+.dropdown-back:hover {
+    background-color: #f1f3f5;
+}
+
+.suspend-action-menu {
+    padding: 5px;
+    margin-left: 130px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1;
+    max-width: 230px;
+}
+
+.menu-option {
+    padding: 10px 16px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.menu-option:hover {
+    background-color: #f6f8fb;
+}
+
+.menu-option:last-child {
+    border-bottom: none;
+}
+
+th.sortable {
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.2s ease;
+    font-weight: bold;
+}
+
+th.sortable:hover {
+    color: var(--defaultblue);
+}
+
+th .sort-indicator {
+    font-size: 1em;
+    margin-left: 0.4rem;
+    vertical-align: middle;
+    color: var(--defaultblue);
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
+
+th.sortable:hover .sort-indicator {
+    opacity: 1;
+}
+
+.resize-handle {
+    position: absolute;
+    right: -5px;
+    top: 0;
+    width: 10px;
+    height: 100%;
+    cursor: col-resize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.15s, color 0.15s;
+    font-size: 14px;
+    color: var(--defaultblue);
+    user-select: none;
+}
+
+th:hover .resize-handle,
+.resize-handle.resizing {
+    opacity: 1;
+}
+
+.resize-handle:active {
+    color: var(--defaultblue);
+}
+
+.resize-handle::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 70%;
+    background: #007bff;
+    border-radius: 3px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s;
+}
+
+.resize-handle:hover::before,
+.resize-handle.resizing::before {
+    opacity: 0.9;
+}

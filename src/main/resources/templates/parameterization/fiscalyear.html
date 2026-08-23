@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="/css/parameterization/fiscalyear.css">
+<div th:replace="header :: header"></div>
+<div class="container">
+    <h2>Create or edit a Fiscal Year</h2>
+    <form>
+        <div class="fy-form-section">
+
+            <div class="fy-form-group">
+                <h3>International (AD)</h3>
+                <label for="fiscalAdStart">Fiscal Ad Start</label>
+                <input type="text" id="fiscalAdStart" name="fiscalAdStart" required placeholder="2023-04-14">
+            </div>
+            <div class="fy-form-group">
+                <label for="fiscalAdEnd">Fiscal Ad End</label>
+                <input type="text" id="fiscalAdEnd" name="fiscalAdEnd" required placeholder="2024-04-13">
+            </div>
+            <div class="fy-form-group">
+                <h3>Nepali (BS)</h3>
+                <label for="fiscalBsStart">Fiscal Bs Start</label>
+                <input type="text" id="fiscalBsStart" name="fiscalBsStart" required placeholder="2080-01-01">
+            </div>
+            <div class="fy-form-group">
+                <label for="fiscalBsEnd">Fiscal Bs End</label>
+                <input type="text" id="fiscalBsEnd" name="fiscalBsEnd" required placeholder="2081-12-31">
+            </div>
+        </div>
+        <div class="btn-container">
+            <button type="submit" class="save-btn">Save</button>
+            <button type="button" onclick="window.history.back()">Cancel</button>
+        </div>
+    </form>
+</div>
+</body>
+<script>
+    document.querySelector('form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const payload = {
+            fiscalAdStart: document.getElementById('fiscalAdStart').value,
+            fiscalAdEnd: document.getElementById('fiscalAdEnd').value,
+            fiscalBsStart: document.getElementById('fiscalBsStart').value,
+            fiscalBsEnd: document.getElementById('fiscalBsEnd').value
+        };
+        fetch('/api/fiscalyear/save', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        }).then(res => {
+            if (res.ok) {
+                alert('Fiscal year saved!');
+                window.location.href = '/setupCalendar';
+            } else {
+                alert('Failed to save fiscal year.');
+            }
+        });
+    });
+</script>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Good Receiving Note Reports</title>
+    <link rel="stylesheet" href="/css/reports/goodreceivingnotereports.css">
+</head>
+<body>
+<div th:replace="header :: header"></div>
+<div class="custom-form-container">
+<h1>Good Receiving Note Reports</h1>
+<div class="custom-form-row">
+    <div class="form-group">
+        <label for="filterDateFrom">Date From</label>
+        <input type="date" id="filterDateFrom"/>
+    </div>
+
+    <div class="form-group">
+        <label for="filterDateTo">Date To</label>
+        <input type="date" id="filterDateTo"/>
+    </div>
+    <div class="form-group">
+        <label for="supplier">Supplier</label>
+        <select class="form-select" id="supplier">
+            <option value="">Select Supplier</option>
+            <option>ABC Suppliers</option>
+            <option>XYZ Traders</option>
+            <option>OfficeMart</option>
+            <option>Pokhara Suppliers</option>
+            <option>Lumbini Wholesale</option>
+            <option>Biratnagar Suppliers</option>
+            <option>Janakpur Products</option>
+            <option>Butwal Goods</option>
+            <option>Dharan Mart</option>
+            <option>Bhaktapur Suppliers</option>
+            <option>Nepalgunj Traders</option>
+            <option>Hetauda Goods</option>
+            <option>Dhangadhi Inc</option>
+            <option>Birgunj Logistics</option>
+            <option>Gorkha Wholesale</option>
+            <option>Chitwan Suppliers</option>
+            <option>Makwanpur Corp</option>
+            <option>Jhapa Goods</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="status">Status</label>
+        <select id="status">
+            <option>Select Status</option>
+            <option>Pending</option>
+            <option>Transit</option>
+            <option>Delivered</option>
+        </select>
+    </div>
+
+    <div class="form-actions">
+        <input type="text" placeholder="Search..." id="generalSearch"/>
+        <button class="custom-btn-search">SEARCH</button>
+        <button class="custom-btn-reset">RESET</button>
+    </div>
+</div>
+
+<section th:replace="layout/table"></section>
+</div>
+<script src="/js/reports/goodreceivingnotereports.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Smart Unit Converter</title>
+    <link rel="stylesheet" th:href="@{/css/utility/unitconverter.css}" />
+</head>
+<body>
+<div th:replace="header :: header"></div>
+<div class="converter-container">
+    <div class="tabs">
+        <button onclick="showSection('length')" id="btn-length" class="active">Length</button>
+        <button onclick="showSection('weight')" id="btn-weight">Weight</button>
+        <button onclick="showSection('currency')" id="btn-currency">Currency</button>
+    </div>
+
+    <!-- Length Section -->
+    <div id="length" class="section active">
+        <input type="number" id="lengthFromVal" placeholder="Enter value" />
+        <select id="lengthFromUnit"></select>
+        <div class="equals">=</div>
+        <input type="text" id="lengthToVal" disabled />
+        <select id="lengthToUnit"></select>
+    </div>
+
+    <!-- Weight Section -->
+    <div id="weight" class="section">
+        <input type="number" id="weightFromVal" placeholder="Enter value" />
+        <select id="weightFromUnit"></select>
+        <div class="equals">=</div>
+        <input type="text" id="weightToVal" disabled />
+        <select id="weightToUnit"></select>
+    </div>
+
+    <!-- Currency Section -->
+    <div id="currency" class="section">
+        <input type="number" id="currencyFromVal" placeholder="Enter amount" />
+        <select id="currencyFromUnit"></select>
+        <div class="equals">=</div>
+        <input type="text" id="currencyToVal" disabled />
+        <select id="currencyToUnit"></select>
+    </div>
+</div>
+
+<script src="/js/utility/unitconverter.js"></script>
+</body>
+</html>

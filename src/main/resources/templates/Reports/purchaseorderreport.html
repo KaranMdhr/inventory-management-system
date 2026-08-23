@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Purchase Order Report</title>
+    <link rel="stylesheet" href="/css/reports/purchaseorderreport.css" />
+</head>
+<body>
+
+<div th:replace="header :: header"></div>
+<div class="custom-form-container">
+<h1>Purchase Order Report</h1>
+
+<div class="custom-form-row">
+    <div class="form-group">
+        <label for="filterDateFrom">Date From</label>
+        <input type="date" id="filterDateFrom" />
+    </div>
+
+    <div class="form-group">
+        <label for="filterDateTo">Date To</label>
+        <input type="date" id="filterDateTo" />
+    </div>
+
+    <div class="form-group">
+        <label for="supplier">Supplier</label>
+        <select id="supplier">
+            <option value="">Select Supplier</option>
+            <option>Shrestha Suppliers</option>
+            <option>Himalayan Traders</option>
+            <option>Everest Distributors</option>
+            <option>Kathmandu Goods</option>
+            <!-- Add other suppliers -->
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="status">Status</label>
+        <select id="status">
+            <option>Select Status</option>
+            <option>Pending</option>
+            <option>Transit</option>
+            <option>Delivered</option>
+        </select>
+    </div>
+
+    <div class="form-actions">
+        <input type="text" placeholder="Search..." id="generalSearch" />
+        <button class="custom-btn-search">SEARCH</button>
+        <button class="custom-btn-reset">RESET</button>
+    </div>
+</div>
+
+<section th:replace="layout/table"></section>
+</div>
+<script src="/js/reports/purchaseorderreport.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+.form-container {
+    max-width: 700px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+h2 {
+    text-align: center;
+    color: #2c3e50;
+}
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #333;
+}
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="tel"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1.5px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+textarea {
+    resize: vertical;
+    height: 80px;
+}
+button {
+    margin-top: 25px;
+    width: 100%;
+    padding: 12px;
+    background-color: #34495e;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #2c3e50;
+}
+.inline-inputs {
+    display: flex;
+    gap: 15px;
+}
+.inline-inputs > div {
+    flex: 1;
+}
+.file-upload {
+    margin-top: 10px;
+}
+.group-fields{
+    width: 100%;
+}
+.row-flex{
+    display: flex;
+}
+.form-row {
+  display: flex;
+  width: 100%;  /* Make sure the row fills the container */
+  gap: 16px;    /* adjust gap as needed */
+}
+
+.form-group {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;  /* This ensures input fills its .form-group */
+}
+.url-class{
+    width: 15dvw !important;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Item Opening Report</title>
+    <link rel="stylesheet" href="/css/reports/recentReports.css">
+</head>
+<body>
+<div th:replace="header :: header"></div>
+<div class="custom-form-container">
+    <h1>Activity Log</h1>
+    <div class="custom-form-row">
+        <div class="form-group">
+            <label for="filterDateFrom">Date From</label>
+            <input type="date" id="filterDateFrom"/>
+        </div>
+
+        <div class="form-group">
+            <label for="filterDateTo">Date To</label>
+            <input type="date" id="filterDateTo"/>
+        </div>
+
+        <div class="form-group">
+            <label for="supplier">Type</label>
+            <select class="form-select" id="supplier">
+                <option>Select Type</option>
+                <option>Requisition Form</option>
+                <option>Purchase Order</option>
+                <option>Good Receiving</option>
+                <option>Good Issue</option>
+                <option>Other</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="requestedBy">Requested By</label>
+            <select id="requestedBy">
+                <option value="">Select Requested By</option>
+                <option>Ram Bahadur</option>
+                <option>Sita Karki</option>
+                <option>Bikash Thapa</option>
+                <option>Anita Shrestha</option>
+                <option>Prakash Lama</option>
+                <option>Sunita Maharjan</option>
+                <option>Kiran Gurung</option>
+                <option>Nirmala Rai</option>
+                <option>Manish Singh</option>
+                <option>Rita Khadka</option>
+                <option>Suman Shahi</option>
+                <option>Mina Joshi</option>
+                <option>Dipesh Bista</option>
+                <option>Kabita Magar</option>
+                <option>Ramesh Chaudhary</option>
+                <option>Sabina Yadav</option>
+                <option>Rajendra Poudel</option>
+                <option>Asmita Adhikari</option>
+                <option>Bimal Basnet</option>
+                <option>Laxmi Sharma</option>
+                <option>Bikram Shrestha</option>
+                <option>Sushila Lama</option>
+                <option>Nabin Gurung</option>
+                <option>Saraswati Rai</option>
+                <option>Ramesh Basnet</option>
+                <option>Sita Magar</option>
+                <option>Keshav Poudel</option>
+                <option>Manju Sharma</option>
+                <option>Bishal Thapa</option>
+                <option>Rina Shrestha</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="status">Status</label>
+            <select id="status">
+                <option>Select Status</option>
+                <option>Pending</option>
+                <option>Transit</option>
+                <option>Delivered</option>
+            </select>
+        </div>
+
+        <div class="form-actions">
+            <input type="text" placeholder="Search..." id="generalSearch"/>
+            <button class="custom-btn-search">SEARCH</button>
+            <button class="custom-btn-reset">RESET</button>
+        </div>
+
+    </div>
+    <div id="tableContainer">
+    <section th:replace="layout/table"></section>
+    </div>
+</div>
+<script src="/js/reports/recentReports.js"></script>
+</body>
+
+</html>

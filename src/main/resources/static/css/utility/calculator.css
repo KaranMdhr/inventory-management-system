@@ -1,0 +1,60 @@
+.calculator {
+    border: 2px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    background: white;
+    width: 300px;
+    margin-inline: auto;
+    margin-top: 50px
+}
+
+#display {
+
+    height: 50px;
+    font-size: 24px;
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+button {
+    font-size: 18px;
+    padding: 15px;
+    cursor: pointer;
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 5px;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background-color: #d1d1d1;
+}
+
+.memorycalc{
+    background-color: #f1f1f1;
+
+}
+
+.calc{
+    background: #1d4ed8;
+    color: white;
+}
+
+.calc:hover{
+    background: #1844c0;
+}
+
+.clearcalc{
+    background: red;
+    color: #ffffff;
+}
+
+.clearcalc:hover{
+    background: #bf0404;
+}

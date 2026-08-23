@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dictionary</title>
+    <link rel="stylesheet" th:href="@{/css/utility/dictionary.css}">
+</head>
+<body>
+<div th:replace="header :: header"></div>
+<div class="container">
+
+    <h2>Dictionary</h2>
+    <input type="text" id="wordInput" placeholder="Enter word">
+    <button onclick="searchWord()">Search</button>
+
+    <div id="definition"></div>
+    <div id="pronounceBtn" style="display: none;">
+        <button onclick="playAudio()">🔊 Pronounce</button>
+    </div>
+
+    <h3>Search History</h3>
+    <ul id="historyList"></ul>
+</div>
+
+<script src="/js/utility/dictionary.js"></script>
+
+</body>
+</html>

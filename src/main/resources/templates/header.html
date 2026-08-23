@@ -1,0 +1,66 @@
+<div th:fragment="header">
+    <link rel="stylesheet" th:href="@{/css/layout/notification.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <nav>
+        <div class="navbar">
+            <a class="navbar-brand" th:href="@{/}">IMS </a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <span class="nav-link">Parameterization</span>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" th:href="@{/organizationsetup}">Organization Setup</a></li>
+                        <li><a class="dropdown-item" th:href="@{/setupCalendar}">Calender Setup</a></li>
+                        <li><a class="dropdown-item" th:href="@{/categorydetails}">Category Setup</a></li>
+                        <li><a class="dropdown-item" th:href="@{/companydetails}">Company</a></li>
+                        <li><a class="dropdown-item" th:href="@{/branchdetails}">Branch Setup</a></li>
+                        <li><a class="dropdown-item" th:href="@{/departmentdetails}">Department Setup</a></li>
+                        <li><a class="dropdown-item" th:href="@{/itemdetails}">Item Entry</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <span class="nav-link">Operations</span>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" th:href="@{/requisitionslip}">Requisition Slip</a></li>
+                        <li><a class="dropdown-item" th:href="@{/purchaseorder}">Purchase Order</a></li>
+                        <li><a class="dropdown-item" th:href="@{/goodreceivingnote}">Goods Receiving Note</a></li>
+                        <li><a class="dropdown-item" th:href="@{/itemissueform}">Item Issue</a></li>
+                        <li><a class="dropdown-item" th:href="@{/maintainanceform}">Maintainance Form</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <span class="nav-link">Reports</span>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" th:href="@{/recentreports}">Activity Log</a></li>
+                        <li><a class="dropdown-item" th:href="@{/requisitionreport}">Requisition Report</a></li>
+                        <li><a class="dropdown-item" th:href="@{/purchaseorderreport}">Purchase Order Report</a></li>
+                        <li><a class="dropdown-item" th:href="@{/goodreceivingnotereports}">Good Receiving Report</a>
+                        </li>
+                        <li><a class="dropdown-item" th:href="@{/damagereport}">Damage Items Report</a></li>
+                        <li><a class="dropdown-item" th:href="@{/goodissuereport}">Good Issue Report</a></li>
+                        <li><a class="dropdown-item" th:href="@{/reports/stockledgerreport}">Stock Ledger</a></li>
+                        <li><a class="dropdown-item" th:href="@{/reports/maintainancereport}">Maintainance Report</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <span class="nav-link">Utility</span>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" th:href="@{/companystaffdetails}">Company Staff</a></li>
+                        <li><a class="dropdown-item" th:href="@{/userregistration}">User Registration</a></li>
+                        <li><a class="dropdown-item" th:href="@{/accesscontrol}">Access Control</a></li>
+                        <li><a class="dropdown-item" th:href="@{/calculator}">Calculator</a></li>
+                        <li><a class="dropdown-item" th:href="@{/notes}">Notes</a></li>
+                        <li><a class="dropdown-item" th:href="@{/dictionary}">Dictionary</a></li>
+                        <li><a class="dropdown-item" th:href="@{/unitconverter}">Unit Converter</a></li>
+                        <li><a class="dropdown-item" th:href="@{/calender}">Calender</a></li>
+                        <li><a class="dropdown-item" th:href="@{/reminder}">Reminder</a></li>
+                        <li><a class="dropdown-item" th:href="@{/inventorymethod}">Inventory Valuation Method</a></li>
+                        <li><a class="dropdown-item" th:href="@{/codegenerator}">Code Generator</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <script src="/js/layout/notification.js"></script>
+</div>

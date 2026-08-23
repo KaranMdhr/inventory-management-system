@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventory Filter and Recent Data</title>
+    <link rel="stylesheet" th:href="@{/css/filter.css}">
+</head>
+<body>
+
+<form id="filterForm">
+    <div class="form-row">
+        <div class="form-group">
+            <label for="item">Item</label>
+            <select id="item" name="item">
+                <option value="">Select Item</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="status">Status</label>
+            <select id="status" name="status">
+                <option value="">Select Status</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="filterBy">Filter By</label>
+            <select id="filterBy" name="filterBy">
+                <option value="">Select Filter</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group">
+            <label for="fiscalYear">Fiscal Year</label>
+            <select id="fiscalYear" name="fiscalYear">
+                <option value="">Select Year</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="fiscalStart">Fiscal Start Date</label>
+            <input type="date" id="fiscalStart" name="fiscalStart">
+        </div>
+
+        <div class="form-group">
+            <label for="fiscalEnd">Fiscal End Date</label>
+            <input type="date" id="fiscalEnd" name="fiscalEnd">
+        </div>
+
+        <div class="form-group" style="align-self: flex-end;">
+            <button type="submit" class="search-btn">SEARCH</button>
+            <button type="reset" class="reset-btn">RESET</button>
+        </div>
+    </div>
+</form>
+
+<table id="inventoryTable">
+    <thead>
+    <tr>
+        <th>Item</th>
+        <th>Status</th>
+        <th>Date</th>
+        <th>Quantity</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody id="tableBody">
+    <!-- Rows will be inserted here dynamically -->
+    </tbody>
+</table>
+
+<script>
+    // Example dynamic data (replace this with your API call)
+    const records = [
+        { id: 1, itemName: "Item A", status: "Received", date: "2025-06-25", quantity: 120 },
+        { id: 2, itemName: "Item B", status: "Pending", date: "2025-06-24", quantity: 80 },
+        { id: 3, itemName: "Item C", status: "Dispatched", date: "2025-06-23", quantity: 150 },
+    ];
+
+    const tableBody = document.getElementById("tableBody");
+
+    records.forEach(record => {
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+            <td>${record.itemName}</td>
+            <td>${record.status}</td>
+            <td>${record.date}</td>
+            <td>${record.quantity}</td>
+            <td>
+                <button class="view-btn" onclick="viewRecord(${record.id})">View</button>
+                <button class="edit-btn" onclick="editRecord(${record.id})">Edit</button>
+                <button class="delete-btn" onclick="deleteRecord(${record.id})">Delete</button>
+            </td>
+        `;
+
+        tableBody.appendChild(row);
+    });
+
+    function viewRecord(id) {
+        alert("View record with ID: " + id);
+    }
+
+    function editRecord(id) {
+        alert("Edit record with ID: " + id);
+    }
+
+    function deleteRecord(id) {
+        if (confirm("Are you sure you want to delete record ID: " + id + "?")) {
+            alert("Deleted record with ID: " + id);
+            // Call API to delete, then refresh table
+        }
+    }
+</script>
+
+</body>
+</html>

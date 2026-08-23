@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Simple Reminder with Persistent Red Dot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" th:href="@{/css/utility/reminder.css}">
+</head>
+<body>
+<div th:replace="header :: header"></div>
+<div class="container">
+    <div class="fields-wrapper">
+        <h2 id="formTitle">Set Reminder</h2>
+        <input type="text" id="reminderText" placeholder="Reminder name" />
+        <input type="date" id="reminderDate" />
+        <input type="time" id="reminderTime" />
+        <button id="submitBtn" onclick="setOrUpdateReminder()">Set Reminder</button>
+    </div>
+
+    <button id="clearNotificationsBtn" onclick="clearNotifications()" style="display:none;">Clear Notifications</button>
+
+    <div class="reminder-list" id="reminderList"></div>
+
+    <!-- Custom Alert Popup -->
+    <div id="customAlert" class="custom-alert">
+        <div class="custom-alert-box">
+            <p id="alertMessage"></p>
+            <button onclick="closeCustomAlert()">Close</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    let reminders = [];
+    let editingIndex = null;
+    let isFiring = false;
+    let originalTitle = document.title;
+    let redDotActive = false;
+
+    function loadReminders() {
+        const stored = localStorage.getItem("reminders");
+        reminders = stored ? JSON.parse(stored) : [];
+    }
+
+    function saveReminders() {
+        localStorage.setItem("reminders", JSON.stringify(reminders));
+    }
+
+    function clearForm() {
+        document.getElementById("reminderText").value = "";
+        document.getElementById("reminderDate").value = "";
+        document.getElementById("reminderTime").value = "";
+        editingIndex = null;
+        document.getElementById('formTitle').textContent = "Set Reminder";
+        document.getElementById('submitBtn').textContent = "Set Reminder";
+    }
+
+    function setOrUpdateReminder() {
+        const text = document.getElementById("reminderText").value.trim();
+        const date = document.getElementById("reminderDate").value;
+        const time = document.getElementById("reminderTime").value;
+
+        if (!text || !date || !time) {
+            alert("Please enter reminder name, date, and time");
+            return;
+        }
+
+        loadReminders();
+
+        const newReminder = { text, date, time, fired: false };
+
+        if (editingIndex !== null) {
+            reminders[editingIndex] = newReminder;
+            editingIndex = null;
+        } else {
+            reminders.push(newReminder);
+        }
+
+        saveReminders();
+        renderReminders();
+        clearForm();
+    }
+
+    function renderReminders() {
+        const list = document.getElementById("reminderList");
+        if (reminders.length === 0) {
+            list.innerHTML = "<div style='color:#aaa;text-align:center;padding:18px 0;'>No reminders yet.</div>";
+            return;
+        }
+        list.innerHTML = reminders.map((reminder, index) => `
+            <div class="reminder-item">
+                <div class="reminder-info">
+                    <span>${reminder.text}</span>
+                    <span>&#128197; ${reminder.date}</span>
+                    <span>&#9200; ${reminder.time}</span>
+                </div>
+                <div class="reminder-actions">
+                    <button onclick="editReminder(${index})">&#9998; Edit</button>
+                    <button onclick="deleteReminder(${index})">&#128465; Delete</button>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function editReminder(idx) {
+        const reminder = reminders[idx];
+        document.getElementById("reminderText").value = reminder.text;
+        document.getElementById("reminderDate").value = reminder.date;
+        document.getElementById("reminderTime").value = reminder.time;
+        editingIndex = idx;
+        document.getElementById('formTitle').textContent = "Edit Reminder";
+        document.getElementById('submitBtn').textContent = "Update Reminder";
+    }
+
+    function deleteReminder(idx) {
+        if (editingIndex === idx) clearForm();
+        reminders.splice(idx, 1);
+        saveReminders();
+        renderReminders();
+    }
+
+    function showNotification(message) {
+        if (Notification.permission === "granted") {
+            new Notification("Reminder", {
+                body: message,
+                icon: "https://cdn-icons-png.flaticon.com/512/1827/1827392.png"
+            });
+        }
+
+        // Show custom popup
+        document.getElementById("alertMessage").textContent = "Reminder: " + message;
+        document.getElementById("customAlert").style.display = "flex";
+
+        if (!redDotActive) {
+            document.title = "🔴 " + originalTitle;
+            redDotActive = true;
+            document.getElementById("clearNotificationsBtn").style.display = "block";
+        }
+    }
+
+    function closeCustomAlert() {
+        document.getElementById("customAlert").style.display = "none";
+    }
+
+    function checkAndFireReminders() {
+        if (isFiring) return;
+        isFiring = true;
+
+        loadReminders();
+
+        const now = new Date();
+        const currentDate = now.toISOString().slice(0, 10);
+        const currentTime = now.toTimeString().slice(0, 5);
+
+        let changed = false;
+        reminders.forEach(reminder => {
+            if (!reminder.fired && reminder.date === currentDate && reminder.time === currentTime) {
+                showNotification(reminder.text);
+                reminder.fired = true;
+                changed = true;
+            }
+        });
+
+        if (changed) {
+            saveReminders();
+            renderReminders();
+        }
+
+        isFiring = false;
+    }
+
+    function clearNotifications() {
+        document.title = originalTitle;
+        redDotActive = false;
+        document.getElementById("clearNotificationsBtn").style.display = "none";
+
+        reminders.forEach(r => r.fired = false);
+        saveReminders();
+        renderReminders();
+    }
+
+    window.addEventListener("focus", () => {
+        if (redDotActive) {
+            clearNotifications();
+        }
+    });
+
+    if (Notification.permission !== "granted") {
+        Notification.requestPermission();
+    }
+
+    window.addEventListener("storage", event => {
+        if (event.key === "reminders") {
+            loadReminders();
+            renderReminders();
+        }
+    });
+
+    setInterval(checkAndFireReminders, 1000);
+    loadReminders();
+    renderReminders();
+</script>
+</body>
+</html>

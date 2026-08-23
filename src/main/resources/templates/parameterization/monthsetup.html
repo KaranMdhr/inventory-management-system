@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AD to BS Month Entry</title>
+    <link rel="stylesheet" href="/css/parameterization/monthsetup.css">
+</head>
+
+<body>
+    <div th:replace="header :: header"></div>
+    <div class="container">
+        <h2>AD to BS Month Entry</h2>
+        <form id="calendarForm">
+            <div class="form-section">
+                <div class="form-group">
+                    <label for="adDate">Ad Date</label>
+                    <input type="date" id="adDate" name="adDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="bsDate">Bs Year</label>
+                    <input type="text" id="bsDate" name="bsDate" placeholder="2082"  required>
+                </div>
+                <div class="form-group">
+                    <label for="startDay">Start Day of Year</label>
+                    <select id="startDay" name="startDay" required>
+                        <option value="">Select Day</option>
+                        <option value="SUNDAY">Sunday</option>
+                        <option value="MONDAY">Monday</option>
+                        <option value="TUESDAY">Tuesday</option>
+                        <option value="WEDNESDAY">Wednesday</option>
+                        <option value="THURSDAY">Thursday</option>
+                        <option value="FRIDAY">Friday</option>
+                        <option value="SATURDAY">Saturday</option>
+                    </select>
+                </div>
+            </div>
+            <hr>
+            <div class="form-section months-section">
+                <div class="month-row">
+                    <div class="form-group">
+                        <label>Month</label>
+                        <input type="text" name="month[]" value="BAISHAKH" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Total Days</label>
+                        <input type="number" name="days[]" value="31" required>
+                    </div>
+                    <button type="button" class="holiday-btn">Holidays</button>
+                </div>
+                <div class="month-row">
+                    <div class="form-group">
+                        <label>Month</label>
+                        <input type="text" name="month[]" value="JESTHA" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Total Days</label>
+                        <input type="number" name="days[]" value="32" required>
+                    </div>
+                    <button type="button" class="holiday-btn">Holidays</button>
+                </div>
+                <div class="month-row">
+                    <div class="form-group">
+                        <label>Month</label>
+                        <input type="text" name="month[]" value="ASHAD" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Total Days</label>
+                        <input type="number" name="days[]" value="31" required>
+                    </div>
+                    <button type="button" class="holiday-btn">Holidays</button>
+                </div>
+                <div class="month-row">
+                    <div class="form-group">
+                        <label>Month</label>
+                        <input type="text" name="month[]" value="SHRAWAN" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Total Days</label>
+                        <input type="number" name="days[]" value="32" required>
+                    </div>
+                    <button type="button" class="holiday-btn">Holidays</button>
+                </div>
+                <div class="month-row">
+                    <div class="form-group">
+                        <label>Month</label>
+                        <input type="text" name="month[]" value="BHADRA" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Total Days</label>
+                        <input type="number" name="days[]" value="31" required>
+                    </div>
+                    <button type="button" class="holiday-btn">Holidays</button>
+                </div>
+                <div class="month-row">
+                    <div class="form-group">
+                        <label>Month</label>
+                        <input type="text" name="month[]" value="ASHOJ" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Total Days</label>
+                        <input type="number" name="days[]" value="30" required>
+                    </div>
+                    <button type="button" class="holiday-btn">Holidays</button>
+                </div>
+                <div class="month-row">
+                    <div class="form-group">
+                        <label>Month</label>
+                        <input type="text" name="month[]" value="KARTIK" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Total Days</label>
+                        <input type="number" name="days[]" value="30" required>
+                    </div>
+                    <button type="button" class="holiday-btn">Holidays</button>
+                </div>
+                <div class="month-row">
+                    <div class="form-group">
+                        <label>Month</label>
+                        <input type="text" name="month[]" value="MANGSIR" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Total Days</label>
+                        <input type="number" name="days[]" value="30" required>
+                    </div>
+                    <button type="button" class="holiday-btn">Holidays</button>
+                </div>
+                <div class="month-row">
+                    <div class="form-group">
+                        <label>Month</label>
+                        <input type="text" name="month[]" value="POUSH" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Total Days</label>
+                        <input type="number" name="days[]" value="29" required>
+                    </div>
+                    <button type="button" class="holiday-btn">Holidays</button>
+                </div>
+                <div class="month-row">
+                    <div class="form-group">
+                        <label>Month</label>
+                        <input type="text" name="month[]" value="MAGH" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Total Days</label>
+                        <input type="number" name="days[]" value="30" required>
+                    </div>
+                    <button type="button" class="holiday-btn">Holidays</button>
+                </div>
+                <div class="month-row">
+                    <div class="form-group">
+                        <label>Month</label>
+                        <input type="text" name="month[]" value="FALGUN" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Total Days</label>
+                        <input type="number" name="days[]" value="29" required>
+                    </div>
+                    <button type="button" class="holiday-btn">Holidays</button>
+                </div>
+                <div class="month-row">
+                    <div class="form-group">
+                        <label>Month</label>
+                        <input type="text" name="month[]" value="CHAITRA" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Total Days</label>
+                        <input type="number" name="days[]" value="31" required>
+                    </div>
+                    <button type="button" class="holiday-btn">Holidays</button>
+                </div>
+            </div>
+            <div class="btn-container">
+                <button type="button" onclick="window.history.back()">Cancel</button>
+                <button type="submit" style="background:#3498db;">Save</button>
+            </div>
+        </form>
+    </div>
+    <div id="holidayModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <h3>Select Holidays</h3>
+            <div id="calendarGrid"></div>
+            <button id="saveHolidaysBtn"
+                style="margin-top:16px;background:#3498db;color:#fff;padding:8px 18px;border:none;border-radius:4px;">Save
+                Holidays</button>
+        </div>
+    </div>
+    <script>
+        const today = new Date().toISOString().split('T')[0];
+        const adDateInput = document.getElementById('adDate');
+        adDateInput.value = today;
+        adDateInput.min = "2000-01-01";
+
+        // calender part
+        const holidayBtns = document.querySelectorAll('.holiday-btn');
+        const modal = document.getElementById('holidayModal');
+        const closeModal = document.getElementById('closeModal');
+        const calendarGrid = document.getElementById('calendarGrid');
+        const saveBtn = document.getElementById('saveHolidaysBtn');
+
+        let currentMonthIndex = 0;
+        let daysInMonth = 31;
+        let selectedDays = {};
+        let monthRows = document.querySelectorAll('.month-row');
+
+        // Store holidays for each month (by index)
+        let holidaysByMonth = {};
+
+        // Open modal on button click
+        holidayBtns.forEach((btn, idx) => {
+            btn.addEventListener('click', () => {
+                currentMonthIndex = idx;
+                // Get days in month from input
+                daysInMonth = parseInt(monthRows[idx].querySelector('input[type="number"]').value, 10);
+                showCalendar(daysInMonth, holidaysByMonth[idx] || []);
+                modal.style.display = 'flex';
+            });
+        });
+
+        // Close modal
+        closeModal.onclick = () => { modal.style.display = 'none'; };
+
+        // Save holidays
+        saveBtn.onclick = () => {
+            // Save selected days for this month
+            holidaysByMonth[currentMonthIndex] = [...selectedDays];
+            modal.style.display = 'none';
+        };
+
+        // Hide modal on outside click
+        window.onclick = function (event) {
+            if (event.target === modal) modal.style.display = "none";
+        };
+
+        // Nepali numerals and weekdays
+        const nepaliDigits = ['०', '१', '२', '३', '४', '५', '६', '७', '८', '९'];
+        function toNepaliNumber(num) {
+            return String(num).split('').map(d => nepaliDigits[parseInt(d)]).join('');
+        }
+        const nepaliWeekdays = ['आ', 'सो', 'मं', 'बु', 'बि', 'शु', 'श'];
+
+        function showCalendar(days, preselected) {
+            calendarGrid.innerHTML = '';
+            selectedDays = new Set(preselected);
+
+            // Nepali weekday labels
+            nepaliWeekdays.forEach((lbl, idx) => {
+                let el = document.createElement('div');
+                el.textContent = lbl;
+                el.className = 'calendar-day disabled';
+                if (idx === 6) el.style.color = 'red'; // Saturday label in red
+                calendarGrid.appendChild(el);
+            });
+
+            // Find which day of week the 1st falls on (let's assume Sunday)
+            let startDay = 0; // 0=Sunday
+            let totalCells = Math.ceil((days + startDay) / 7) * 7;
+
+            // Fill grid with Nepali numerals
+            for (let i = 0; i < totalCells; i++) {
+                let dayNum = i - startDay + 1;
+                let el = document.createElement('div');
+                let weekDay = i % 7;
+                if (i < startDay || dayNum > days) {
+                    el.className = 'calendar-day disabled';
+                    el.textContent = '';
+                } else {
+                    el.className = 'calendar-day' + (selectedDays.has(dayNum) ? ' selected' : '');
+                    el.textContent = toNepaliNumber(dayNum);
+                    if (weekDay === 6) { // Saturday
+                        el.style.color = 'red';
+                        el.style.fontWeight = 'bold';
+                    }
+                    el.onclick = function () {
+                        if (selectedDays.has(dayNum)) {
+                            selectedDays.delete(dayNum);
+                            el.classList.remove('selected');
+                        } else {
+                            selectedDays.add(dayNum);
+                            el.classList.add('selected');
+                        }
+                    };
+                }
+                calendarGrid.appendChild(el);
+            }
+        }
+
+        // Handle form submit
+        document.getElementById('calendarForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const adDate = document.getElementById('adDate').value;
+            const bsDate = document.getElementById('bsDate').value;
+            const startDay = document.getElementById('startDay').value;
+
+            // Collect months, days, and holidays
+            const months = [];
+            document.querySelectorAll('.month-row').forEach((row, idx) => {
+                const month = row.querySelector('input[name="month[]"]').value;
+                const days = row.querySelector('input[name="days[]"]').value;
+                const holidays = holidaysByMonth[idx] || [];
+                months.push({
+                    month,
+                    days,
+                    holidays
+                });
+            });
+
+            // Prepare payload
+            const payload = {
+                adDate,
+                bsDate,
+                startDay,
+                months
+            };
+
+            // Send to backend
+            fetch('/api/calendar/save', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            })
+                .then(res => {
+                    if (res.ok) {
+                        alert('Calendar saved!');
+                        // window.location.href = '/setupCalendar';
+                    } else {
+                        alert('Failed to save calendar.');
+                    }
+                })
+                .catch(() => alert('Error saving calendar.'));
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+<link rel="stylesheet" th:href="@{/css/parameterization/companydetails.css}">
+
+<div th:replace="header :: header"></div>
+<div class="table-container">
+    <div class="header-row">
+        <h1>Branch List</h1>
+        <a href="/branchsetup" class="add-btn">+ Add New Branch</a>
+
+    </div>
+
+    <section th:replace="layout/table"></section>
+    <nav>
+        <ul class="pagination justify-content-center" id="pagination"></ul>
+    </nav>
+
+</div>
+
+<script src="/js/parameterization/branch/branchdetails.js"></script>
+

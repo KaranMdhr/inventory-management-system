@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Purchase Entry</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/operations/purchaseorder.css}">
+</head>
+<body>
+<div class="container">
+    <form>
+        <h2>View Purchase Order</h2>
+
+        <div class="row">
+            <div>
+                <label>Order Type</label>
+                <input type="text" value="Cash" readonly>
+            </div>
+            <div>
+                <label>Supplier</label>
+                <input type="text" value="Salesberry" readonly>
+
+            </div>
+            <div>
+                <label>Payment Terms</label>
+                <input type="text" value="50% before shipping" readonly>
+            </div>
+            <div class="form-group">
+                <label>Tender/Quotation</label>
+                <input type="text" id="tender" name="tenderQuotation" value="Tender" readonly>
+
+
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div>
+                <label>Order Date</label>
+                <input type="text" value="2082-02-29" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Requisition code: </label>
+                <div class="form-row">
+                    <input type="text" class="code" placeholder="Auto-generated" readonly value="REQ101" />
+                    <input type="text" class="code" placeholder="Auto-generated" readonly value="REQ102" />
+                    <input type="text" class="code" placeholder="Auto-generated" readonly value="REQ103" />
+                </div>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Item Purchased</th>
+                <th>Rate</th>
+                <th>Unit</th>
+                <th>Quantity</th>
+                <th>Total</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>
+                    <input type="text" value="Pen" readonly>
+                </td>
+                <td><input type="number" value="20" readonly></td>
+                <td><input type="text" value="pcs" readonly></td>
+                <td><input type="number" value="100" readonly></td>
+                <td><input type="number" value="2000" readonly></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>
+                    <input type="text" value="Pencil" readonly>
+                </td>
+                <td><input type="number" value="10" readonly></td>
+                <td><input type="text" value="pcs" readonly></td>
+                <td><input type="number" value="100" readonly></td>
+                <td><input type="number" value="10" readonly></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>
+                    <input type="text" value="A4 Paper" readonly>
+                </td>
+                <td><input type="number" value="500" readonly></td>
+                <td><input type="text" value="packet" readonly></td>
+                <td><input type="number" value="10" readonly></td>
+                <td><input type="number" value="5000" readonly></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>
+                    <input type="text" value="Notebook" readonly>
+                </td>
+                <td><input type="number" value="100" readonly></td>
+                <td><input type="text" value="pcs" readonly></td>
+                <td><input type="number" value="100" readonly></td>
+                <td><input type="number" value="10000" readonly></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>
+                    <input type="text" value="Chairs" readonly>
+                </td>
+                <td><input type="number" value="10000" readonly></td>
+                <td><input type="text" value="pcs" readonly></td>
+                <td><input type="number" value="100" readonly></td>
+                <td><input type="number" value="1000000" readonly></td>
+            </tr>
+
+            </tbody>
+        </table>
+
+        <div class="row">
+            <div>
+                <label>Delivery Date - AD</label>
+                <input type="text" value="2025-06-09" readonly>
+            </div>
+            <div>
+                <label>Delivery Date - BS</label>
+                <input type="text" value="2082-02-26" readonly>
+            </div>
+        </div>
+
+        <label>Remarks</label>
+        <textarea rows="4" readonly></textarea>
+
+
+    </form>
+</div>
+<!--<script src="/js/purchaseorder.js"></script>-->
+</body>
+</html>
+

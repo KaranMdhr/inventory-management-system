@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Months Entry</title>
+    <link rel="stylesheet" href="/css/parameterization/setupCalendar.css">
+</head>
+<body>
+<div th:replace="header :: header"></div>
+    <div class="container calendar-card">
+        <div class="header-row">
+            <h1>Months Entry</h1>
+            <div class="header-actions">
+                <button class="create-btn" onclick="window.location.href='/fiscalyear'">+ Fiscal year</button>
+                <button class="create-btn" onclick="window.location.href='/monthsetup'">+ CREATE A NEW MONTHS
+                    ENTRY</button>
+            </div>
+        </div>
+        <section th:replace="layout/table">
+        </section>
+        <nav>
+            <ul class="pagination justify-content-center" id="pagination"></ul>
+        </nav>
+    </div>
+
+<script src="/js/parameterization/setupCalendar.js"></script>
+</body>
+</html>

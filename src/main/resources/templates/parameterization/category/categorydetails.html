@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Category List</title>
+    <link rel="stylesheet" th:href="@{/css/parameterization/categorydetails.css}">
+</head>
+<body>
+<div th:replace="header :: header"></div>
+<h2>Category List</h2>
+<div class="addbtns">
+<a href="/categorytype" class="add-category-btn">+ Add Category Type</a>
+<a href="/categoryform" class="add-category-btn">+ Add New Category</a>
+</div>
+<section th:replace="layout/table"></section>
+<nav>
+    <ul class="pagination justify-content-center" id="pagination"></ul>
+</nav>
+
+<script src="/js/parameterization/category/categorydetails.js"></script>
+</body>
+</html>

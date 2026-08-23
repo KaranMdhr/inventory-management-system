@@ -1,0 +1,51 @@
+<link rel="stylesheet" th:href="@{/css/operations/itemissue.css}">
+<div th:replace="header :: header"></div>
+<div th:replace="layout/form :: form"></div>
+<div class="form-container">
+    <h2>Item Issue Form</h2>
+    <form action="/submit-item-issue" method="post" id="issueForm">
+        <div class="form-group">
+            <label for="tagInput">Requisition Codes:</label>
+            <div class="tag-input-container" id="tagInputContainer">
+                <ul id="tagsList"></ul>
+                <input type="text" id="tagInput" placeholder="Enter Requisition Code" list="requisitionList" autocomplete="off">
+                <datalist id="requisitionList"></datalist>
+            </div>
+            <input type="hidden" name="requestNumbers" id="requestNumbers">
+        </div>
+
+        <!-- Dynamic items table -->
+        <div class="form-group" id="itemsTableContainer" style="display:none;">
+            <table id="itemsTable">
+                <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Unit</th>
+                    <th>Quantity</th>
+                    <th>Rate</th>
+                    <th>Amount</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="form-group">
+            <label for="issueDate">Issue Date:</label>
+            <input type="date" id="issueDate" name="issueDate" required>
+        </div>
+
+        <div class="form-group">
+            <label for="issuedTo">Issued To:</label>
+            <input type="text" id="issuedTo" name="issuedTo" required>
+        </div>
+
+        <button type="submit">Submit Issue</button>
+        <button type="button" onclick="confirmAndPrint()">Print Gatepass</button>
+    </form>
+</div>
+
+<script src="/js/operations/itemissueform.js">
+</script>
+

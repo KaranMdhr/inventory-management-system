@@ -1,0 +1,117 @@
+#sidebar {
+    width: 250px;
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-right: 1px solid #ccc;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+#noteContainer {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 90px;
+    padding: 20px;
+}
+
+.note {
+    color: black;
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+}
+
+.note-header {
+    background: #f0c000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.note-title {
+    flex: 1;
+    font-size: 16px;
+    font-weight: bold;
+    background: transparent;
+    outline: none;
+    border: none;
+}
+
+.note-title:empty::before {
+    content: "Title...";
+    color: #777;
+}
+
+.note-content {
+    padding: 10px;
+    min-height: 150px;
+    outline: none;
+}
+
+.note-toolbar {
+    display: flex;
+    justify-content: space-around;
+    padding: 8px;
+    background-color: #222;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.note-toolbar button {
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.plus-btn {
+    font-size: 18px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+}
+
+.sidebar-note:hover {
+    background: #e6e6e6;
+}
+
+.sidebar-note {
+    padding: 6px;
+    margin-bottom: 8px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.sidebar-note button {
+    align-self: flex-start;
+    margin-top: 2px;
+}
+
+.highlight {
+    animation: glow 0.7s ease-in-out;
+}
+.mainContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+@keyframes glow {
+    0% { box-shadow: 0 0 0px rgba(255, 204, 0, 0); }
+    50% { box-shadow: 0 0 10px rgba(255, 204, 0, 0.8); }
+    100% { box-shadow: 0 0 0px rgba(255, 204, 0, 0); }
+}
+

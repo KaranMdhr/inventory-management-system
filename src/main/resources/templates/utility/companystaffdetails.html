@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Staff List</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" th:href="@{/css/parameterization/companydetails.css}">
+</head>
+
+<body>
+  <div th:replace="header :: header"></div>
+  <div class="table-container">
+    <div class="header-row">
+      <h1>Staff List</h1>
+      <a href="/companystaff" class="add-btn">+ Add New Staff</a>
+
+    </div>
+
+    <section th:replace="layout/table"></section>
+
+
+    <script src="/js/utility/companystaffdetails.js"></script>
+</body>
+
+</html>

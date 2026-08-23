@@ -1,0 +1,121 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #4e73df, #224abe);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#formContainer {
+    background: white;
+    padding: 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    width: 350px;
+}
+
+
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-wrapper input {
+    width: 100%;
+    padding-right: 35px;
+    /* space for eye icon */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 38px;
+    font-size: 14px;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    user-select: none;
+    color: #666;
+}
+
+.password-toggle:hover {
+    color: #333;
+}
+
+
+.required-star {
+    color: red;
+}
+
+#formContainer h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Form groups */
+#formContainer .form-group {
+    margin-bottom: 15px;
+}
+
+#formContainer label {
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+#formContainer input {
+    width: 100%;
+    padding: 10px 35px 10px 10px;
+    /* extra right padding for icon */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Password toggle icon */
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 16px;
+    user-select: none;
+}
+
+/* Positioning password wrapper */
+input[type="password"],
+input[type="text"] {
+    position: relative;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+}
+
+.btn-primary {
+    background-color: #4e73df;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #224abe;
+}
+
+/* Submit button full width */
+#formContainer button[type="submit"] {
+    width: 100%;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Backup and Restore</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/parameterization/companysetup.css}">
+
+    <style>
+        .toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #323232;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 12px 20px;
+            position: fixed;
+            z-index: 1000;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            font-size: 16px;
+            opacity: 0;
+            transition: opacity 0.4s ease, bottom 0.4s ease;
+        }
+
+        .toast.show {
+            visibility: visible;
+            opacity: 1;
+            bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>System Backup</h2>
+    <button type="button" class="submit-btn" onclick="simulateBackup()">Download Backup</button>
+
+    <hr style="margin: 30px 0;">
+
+    <h2>Restore System</h2>
+    <form id="restoreForm">
+        <div class="form-group">
+            <label for="restoreFile">Upload Backup File:</label>
+            <input type="file" id="restoreFile" name="restoreFile" accept=".zip,.sql" required>
+        </div>
+        <button type="submit" class="submit-btn">Restore Backup</button>
+    </form>
+</div>
+
+
+    <script>
+        function simulateBackup() {
+        alert("Backup created successfully!");
+    }
+
+        document.getElementById("restoreForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const fileInput = document.getElementById("restoreFile");
+        if (!fileInput.files || fileInput.files.length === 0) {
+        alert("Please select a backup file to restore.");
+        return;
+    }
+
+        // Simulate successful restore
+        alert("Restore completed successfully!");
+    });
+</script>
+</body>
+</html>

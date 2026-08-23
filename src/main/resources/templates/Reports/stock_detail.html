@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Stock Detail</title>
+    <link rel="stylesheet" th:href="@{/css/stock_detail.css}">
+</head>
+<body>
+<div th:replace="header :: header"></div>
+<div class="custom-form-container">
+    <h1>Stock Detail for Category: <span id="item-name"></span></h1>
+
+    <div class="filter-bar">
+        <select id="itemNameSelect">
+            <option value="">All Items</option>
+        </select>
+
+        <input type="text" id="searchInput" placeholder="Type to search...">
+        <label for="fromDate">From:</label>
+        <input type="date" id="fromDate">
+        <label for="toDate">To:</label>
+        <input type="date" id="toDate">
+    </div>
+
+    <section th:replace="layout/table"></section>
+</div>
+<script src="/js/reports/stock_detail.js"></script>
+        <script src="/js/reports/table.js"></script>
+</body>
+</html>

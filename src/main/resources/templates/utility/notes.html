@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sticky Notes</title>
+  <link rel="stylesheet" href="css/utility/notes.css">
+</head>
+<body>
+<th th:replace="header :: header"></th>
+<div id="mainContainer" class="mainContainer">
+<div id="sidebar">
+  <h3>Notes History</h3>
+  <div id="notesList"></div>
+</div>
+
+<div id="noteContainer"></div>
+
+<input type="file" id="imageInput" accept="image/*" style="display: none;" />
+</div>
+<script src="js/utility/notes.js"></script>
+
+</body>
+</html>
